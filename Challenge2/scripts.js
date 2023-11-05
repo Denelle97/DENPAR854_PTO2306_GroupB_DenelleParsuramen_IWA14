@@ -7,10 +7,9 @@ const multiply = (a, b) => a * b; //changed + to *
 
 // Define the 'internal' function
 function internal() {
-	const added = this.add(this.internal.a, this.internal.b); // Calculate the sum of internal.a and internal.b using the 'add' function
-	const multiplied = this.multiply(this.internal.a, this.internal.b); // Calculate the product of internal.a and internal.b using the 'multiply' function
-	console.log(multiplied); //log result of multiplied
-    return this;             // Return the object for chaining
+	const added = add(this.internal.a, this.internal.b); // Calculate the sum of internal.a and internal.b using the 'add' function
+	const addedmultiplied = multiply(added, this.internal.c); // Calculate the product of 'added' and internal.c using the 'multiply' function
+	console.log(addedmultiplied); 
 }
 
 // Not allowed to change below this
